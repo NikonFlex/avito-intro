@@ -1,0 +1,12 @@
+services:
+  pr-reviewer:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVER_PORT=8080
+      - SERVER_READ_TIMEOUT=10s
+      - SERVER_WRITE_TIMEOUT=10s
+      - SERVER_IDLE_TIMEOUT=60s
+      - LOG_LEVEL=info
+    restart: unless-stopped
